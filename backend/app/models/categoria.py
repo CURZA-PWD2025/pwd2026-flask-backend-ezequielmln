@@ -6,8 +6,9 @@ class Categoria(BaseModel):
     nombre = db.Column(db.String(100), nullable=False, unique=True)
     descripcion = db.Column(db.Text, nullable=True)
 
-    def __init__(self, nombre) -> None:
+    def __init__(self, nombre, descripcion=None) -> None:
         self.nombre = nombre
+        self.descripcion = descripcion
         
     def to_dict(self):
         return {

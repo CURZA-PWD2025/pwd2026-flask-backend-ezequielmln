@@ -1,7 +1,6 @@
 from app.controllers.rol_controller import RolController
 from flask import request, Blueprint
 
-
 roles = Blueprint('roles', __name__, url_prefix='/roles')
 
 @roles.route('/')
@@ -23,3 +22,4 @@ def update(id):
 @roles.route("/<int:id>", methods=['DELETE'])
 def destroy(id):
     return RolController.destroy( id)
+

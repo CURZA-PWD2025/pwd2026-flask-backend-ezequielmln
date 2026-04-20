@@ -40,7 +40,6 @@ class RolController (Controller):
                 return jsonify({'message': "rol ya registrado"}), 409
         return jsonify ({'message': error}), 422
         
-        
     @staticmethod
     def update(request, id)->tuple[Response, int]:
         nombre:str = request['nombre']

@@ -12,9 +12,8 @@ class Producto(BaseModel):
     categoria_id = db.Column(db.Integer, db.ForeignKey('categorias.id'), nullable=False)
     proveedor_id = db.Column(db.Integer, db.ForeignKey('proveedores.id'), nullable=True)
 
-    def __init__(self, nombre:str, descripcion:str, precio_costo:float, precio_venta:float, stock_actual:int, stock_minimo:int, categoria_id:int, proveedor_id:int = None) -> None:
+    def __init__(self, nombre:str, precio_costo:float, precio_venta:float, stock_actual:int, stock_minimo:int, categoria_id:int, proveedor_id:int = None) -> None:
         self.nombre = nombre
-        self.descripcion = descripcion
         self.precio_costo = precio_costo
         self.precio_venta = precio_venta
         self.stock_actual = stock_actual
