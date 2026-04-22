@@ -1,3 +1,4 @@
+from flask_jwt_extended import get_jwt_identity
 from app.models.movimiento_stock import MovimientoStock
 from app.models import db
 from flask import Response, jsonify
@@ -26,7 +27,7 @@ class MovimientoStockController (Controller):
         producto_id:int = request['producto_id']
         cantidad:int = request['cantidad']
         motivo:str = request['motivo']
-        user_id:int = request['user_id']
+        user_id:int = int(get_jwt_identity())
         
         error :str | None = None
         if tipo is None:

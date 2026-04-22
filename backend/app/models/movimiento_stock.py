@@ -41,6 +41,7 @@ class MovimientoStock(BaseModel):
     def to_dict(self):
         return {
             'id': self.id,
+            'tipo': self.tipo,
             'producto_id': self.producto_id,
             'cantidad': self.cantidad,
             'motivo': self.motivo,
